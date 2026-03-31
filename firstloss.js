@@ -13,37 +13,43 @@ function setup() {
 
 function draw() {
   background('#000000');
-  textSize(80);
+  textSize(120);
   textFont (myFont);
   textAlign (CENTER);
   fill(255);
-  text('CONGRATULATIONS,', windowWidth/2, windowHeight/2.4);
+  text('YOURE OUT OF LIVES', windowWidth/2, windowHeight/3.4);
   
-  textSize(80);
+  textSize(120);
   textFont (myFont);
   textAlign (CENTER);
   fill(255);
-  text('YOU GOT YOUR', windowWidth/2, windowHeight/2);
+  text('AND ONLY GOT YOUR', windowWidth/2, windowHeight/2.55);
 
-  textSize(60);
+  textSize(100);
   textFont (myFont);
   textAlign (CENTER);
   fill('#FFEB3B');
   text('1P', windowWidth/20, windowHeight/11);
   
-   textSize(80);
+   textSize(120);
   textFont (myFont);
   textAlign (CENTER);
   fill(255);
-  text('BACK', windowWidth/2, windowHeight/1.2);
+  text('BACK', windowWidth/2, windowHeight/1.45);
+
+    textSize(120);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill('#FFEB3B');
+  text('START OVER', windowWidth/2, windowHeight/1.1);
   
-   textSize(150);
+   textSize(300);
   textFont (myFont);
   textAlign (CENTER);
   fill('#4CAF50');
-  text('$XXX', windowWidth/2, windowHeight/1.45);
+  text('$XXX', windowWidth/2, windowHeight/1.7);
   
-  textSize(60);
+  textSize(100);
   textFont (myFont);
   textAlign (CENTER);
   fill('#FFEB3B');
