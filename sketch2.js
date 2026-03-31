@@ -12,15 +12,20 @@ function setup() {
 
 
 function draw() {
-  background(220);
   background('#000000');
-  textSize(200);
+  textSize(80);
   textFont (myFont);
   textAlign (CENTER);
-  text('CASH GRAB', windowWidth/2, windowHeight/2);
   fill(255);
+  text('CONGRATULATIONS,', windowWidth/2, windowHeight/2.4);
+  
+  textSize(80);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill(255);
+  text('YOU GOT YOUR', windowWidth/2, windowHeight/2);
 
-  textSize(100);
+  textSize(60);
   textFont (myFont);
   textAlign (CENTER);
   fill('#FFEB3B');
@@ -29,10 +34,16 @@ function draw() {
    textSize(80);
   textFont (myFont);
   textAlign (CENTER);
-  fill('#FFEB3B');
-  text('START', windowWidth/2, windowHeight/1.65);
+  fill(255);
+  text('BACK', windowWidth/2, windowHeight/1.2);
   
-  textSize(100);
+   textSize(150);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill('#4CAF50');
+  text('$XXX', windowWidth/2, windowHeight/1.45);
+  
+  textSize(60);
   textFont (myFont);
   textAlign (CENTER);
   fill('#FFEB3B');
