@@ -7,15 +7,14 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont('Jersey10.ttf'); 
 
+  img = loadImage('game2setup.png');
+
   
 }
 
 
 function draw() {
-
-  
-  background(220);
-  background('#000000');
+  background(img);
 
   textSize(100);
   textFont (myFont);
@@ -23,24 +22,13 @@ function draw() {
   fill('#FFEB3B');
   text('1P', windowWidth/20, windowHeight/11);
   
-   textSize(80);
-  textFont (myFont);
-  textAlign (CENTER);
-  fill('#FFEB3B');
-  text('START', windowWidth/2, windowHeight/1.65);
-  
   textSize(100);
   textFont (myFont);
   textAlign (CENTER);
   fill('#FFEB3B');
   fill('#4CAF50');
   text('$000', windowWidth/1.07,windowHeight/11); 
-
-  textSize(200);
-  textFont (myFont);
-  textAlign (CENTER);
-  text('CASH GRAB', windowWidth/2, windowHeight/2);
-  fill(255);
+  
   
   
 }

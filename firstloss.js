@@ -17,13 +17,13 @@ function draw() {
   textFont (myFont);
   textAlign (CENTER);
   fill(255);
-  text('YOURE OUT OF LIVES', windowWidth/2, windowHeight/3.4);
+  text('YOURE OUT OF LIVES', windowWidth/2, windowHeight/3.6);
   
   textSize(120);
   textFont (myFont);
   textAlign (CENTER);
   fill(255);
-  text('AND ONLY GOT YOUR', windowWidth/2, windowHeight/2.55);
+  text('AND ONLY GOT YOUR', windowWidth/2, windowHeight/2.68);
 
   textSize(100);
   textFont (myFont);
@@ -35,19 +35,19 @@ function draw() {
   textFont (myFont);
   textAlign (CENTER);
   fill(255);
-  text('BACK', windowWidth/2, windowHeight/1.45);
+  text('BACK', windowWidth/2, windowHeight/1.40);
 
     textSize(120);
   textFont (myFont);
   textAlign (CENTER);
   fill('#FFEB3B');
   text('START OVER', windowWidth/2, windowHeight/1.1);
-  
+
    textSize(300);
   textFont (myFont);
   textAlign (CENTER);
   fill('#4CAF50');
-  text('$XXX', windowWidth/2, windowHeight/1.7);
+  text('$XXX', windowWidth/2, windowHeight/1.65);
   
   textSize(100);
   textFont (myFont);
@@ -58,12 +58,3 @@ function draw() {
   
 }
 
-  function mousePressed (){
-      let d = dist(mouseX, mouseY, width/2, height/2);
-      
-      if (d < 12.5) {
-        window.open('index.html');
-      }
-  
-  
-}
