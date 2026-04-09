@@ -56,6 +56,14 @@ function draw() {
   fill('#4CAF50');
   text('$000', windowWidth/1.07,windowHeight/11); 
   
+}
+
+  function mousePressed (){
+      let d = dist(mouseX, mouseY, width/2, height/2);
+      
+      if (d < 12.5) {
+        window.open('index.html');
+      }
   
   
 }
