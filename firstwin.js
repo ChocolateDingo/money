@@ -7,6 +7,18 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont('Jersey10.ttf'); 
 
+  const linkElement = document.getElementById('myThirdExistingLink');
+linkElement.href = 'secondgamesetup.html';
+linkElement.textContent = 'NEXT';
+linkElement.style.fontFamily = 'Jersey10';
+linkElement.style.fontSize = '100px';
+linkElement.style.color = '#FFEB3B';
+linkElement.style.textAlign = 'center';
+linkElement.style.position = 'absolute';
+linkElement.style.left = '50%';
+linkElement.style.top = '85%';
+linkElement.style.transform = 'translate(-50%, -50%)';
+linkElement.style.textDecoration = 'none';
   
 }
 
@@ -36,12 +48,6 @@ function draw() {
   textAlign (CENTER);
   fill(255);
   text('BACK', windowWidth/2, windowHeight/1.40);
-
-    textSize(120);
-  textFont (myFont);
-  textAlign (CENTER);
-  fill('#FFEB3B');
-  text('NEXT', windowWidth/2, windowHeight/1.1);
   
    textSize(300);
   textFont (myFont);
