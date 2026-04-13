@@ -1,5 +1,5 @@
 let clickCount = 0;
-
+let score = 0;
 
 function preload() {}
 xpos = 1;
@@ -27,6 +27,13 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont("Jersey10.ttf");
 
+  let savedScore = getItem('gameScore');
+
+  if (savedScore !== null) {
+    score = savedScore;
+  }
+
+
   img = loadImage("game1.png");
   img2 = loadImage("Drump.png");
   img3 = loadImage("Jezos2.png");
@@ -48,7 +55,7 @@ function draw() {
   textAlign(CENTER);
   fill("#FFEB3B");
   fill("#4CAF50");
-  text("$000", windowWidth / 1.07, windowHeight / 11);
+  text("$" + score, windowWidth / 1.07, windowHeight / 11);
 
   textSize(60);
   textFont(myFont);
@@ -105,13 +112,6 @@ function draw() {
   xpos4 += xspeed4;
 }
 
-// function mousePressed() {
-//   clickCount++;
-
-//   if (clickCount >= 4) {
-//     window.location.href = "firstwin.html";
-//   }
-// }
 
 function mousePressed() {
   if (
@@ -152,5 +152,8 @@ function mousePressed() {
   if (clickCount >= 4) {
     window.location.href = "firstwin.html";
   }
+
+   score ++;
+  storeItem('gameScore', score);
 }
 

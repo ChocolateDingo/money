@@ -1,6 +1,12 @@
+let Score = 0;
+
 function preload() {}
 
 function setup() {
+let savedScore = getItem('gameScore');
+  if (savedScore !== null) {
+    score = savedScore;
+  }
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont("Jersey10.ttf");
 
@@ -24,13 +30,13 @@ function draw() {
   textFont(myFont);
   textAlign(CENTER);
   fill(255);
-  text("YOURE OUT OF LIVES", windowWidth / 2, windowHeight / 3.6);
+  text("THEY GOT AWAY", windowWidth / 2, windowHeight / 3.6);
 
   textSize(120);
   textFont(myFont);
   textAlign(CENTER);
   fill(255);
-  text("AND ONLY GOT YOUR", windowWidth / 2, windowHeight / 2.68);
+  text("AND YOU ONLY GOT YOUR", windowWidth / 2, windowHeight / 2.68);
 
   textSize(100);
   textFont(myFont);
@@ -48,7 +54,7 @@ function draw() {
   textFont(myFont);
   textAlign(CENTER);
   fill("#4CAF50");
-  text("$XXX", windowWidth / 2, windowHeight / 1.65);
+  text("$" + score, windowWidth / 2, windowHeight / 1.65);
 
   textSize(100);
   textFont(myFont);

@@ -1,8 +1,16 @@
+score = 0;
+
 function preload() {
 
 }
 
 function setup() {
+
+  let savedScore = getItem('gameScore');
+
+  if (savedScore !== null) {
+    score = savedScore;
+  }
 
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont('Jersey10.ttf'); 
@@ -27,7 +35,7 @@ function draw() {
   textAlign (CENTER);
   fill('#FFEB3B');
   fill('#4CAF50');
-  text('$000', windowWidth/1.07,windowHeight/11); 
+  text('$' + score, windowWidth/1.07,windowHeight/11); 
   
   
   
