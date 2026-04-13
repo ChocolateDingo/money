@@ -27,12 +27,11 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont("Jersey10.ttf");
 
-  let savedScore = getItem('gameScore');
+  let savedScore = getItem("gameScore");
 
   if (savedScore !== null) {
     score = savedScore;
   }
-
 
   img = loadImage("game1.png");
   img2 = loadImage("Drump.png");
@@ -112,7 +111,6 @@ function draw() {
   xpos4 += xspeed4;
 }
 
-
 function mousePressed() {
   if (
     mouseX > 1 && //if the mouse is greather than 200 we're over the image
@@ -153,7 +151,6 @@ function mousePressed() {
     window.location.href = "firstwin.html";
   }
 
-   score ++;
-  storeItem('gameScore', score);
+  score += 250;
+  storeItem("gameScore", score);
 }
-
