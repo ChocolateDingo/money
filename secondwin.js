@@ -5,9 +5,12 @@ function preload() {
 }
 
 function setup() {
-let savedScore = getItem('gameScore');
+let savedScore = sessionStorage.getItem("gameScore");
+
   if (savedScore !== null) {
-    score = savedScore;
+    score = Number(savedScore);
+  } else {
+    score = 0;
   }
 
   createCanvas(windowWidth, windowHeight);

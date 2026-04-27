@@ -27,10 +27,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont("Jersey10.ttf");
 
-  let savedScore = getItem("gameScore");
+  let savedScore = sessionStorage.getItem("gameScore");
 
   if (savedScore !== null) {
-    score = savedScore;
+    score = Number(savedScore);
+  } else {
+    score = 0;
   }
 
   img = loadImage("game1.png");
@@ -38,6 +40,7 @@ function setup() {
   img3 = loadImage("Jezos2.png");
   img4 = loadImage("Bates.png");
   img5 = loadImage("Muckerberg.png");
+  img6 = loadImage("Union.png");
 }
 
 function draw() {
@@ -56,12 +59,12 @@ function draw() {
   fill("#4CAF50");
   text("$" + score, windowWidth / 1.07, windowHeight / 11);
 
-  textSize(60);
+  textSize(50);
   textFont(myFont);
   textAlign(CENTER);
   fill("#000000");
   text(
-    "CLICK THE BILLIONARES TO GET RID OF THEM",
+    "CLICK THE UNION CARD TO MAKE THE BILLIONAIRES DISAPPEAR",
     windowWidth / 2,
     windowHeight / 10,
   );
@@ -109,48 +112,53 @@ function draw() {
   xpos2 += xspeed2;
   xpos3 += xspeed3;
   xpos4 += xspeed4;
+
+  //  image(img4, 250, 30, 500, 500);
+  //   image(img5, 700, 20, 500, 500);
+  //   image(img2, 550, 20, 500, 500);
+  //   image(img3, 400, 30, 500, 500);
+  image(img6, 570, 100, 300, 200);
 }
 
 function mousePressed() {
   if (
-    mouseX > 1 && //if the mouse is greather than 200 we're over the image
-    mouseX < 1000 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
-    mouseY > 1 && //same idea but on the vertical axis.
-    mouseY < 500
+    mouseX > 550 && //if the mouse is greather than 200 we're over the image
+    mouseX < 1500 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
+    mouseY > 20 && //same idea but on the vertical axis.
+    mouseY < 1050
   ) {
     img2WasClicked = true;
   }
   if (
-    mouseX > 1000 && //if the mouse is greather than 200 we're over the image
-    mouseX < 2000 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
-    mouseY > 1 && //same idea but on the vertical axis.
-    mouseY < 500
+    mouseX > 400 && //if the mouse is greather than 200 we're over the image
+    mouseX < 2500 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
+    mouseY > 20 && //same idea but on the vertical axis.
+    mouseY < 1000
   ) {
     img3WasClicked = true;
   }
   if (
-    mouseX > 1000 && //if the mouse is greather than 200 we're over the image
-    mouseX < 2000 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
-    mouseY > 500 && //same idea but on the vertical axis.
-    mouseY < 1000
+    mouseX > 250 && //if the mouse is greather than 200 we're over the image
+    mouseX < 2500 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
+    mouseY > 20 && //same idea but on the vertical axis.
+    mouseY < 1500
   ) {
     img4WasClicked = true;
   }
   if (
-    mouseX > 1 && //if the mouse is greather than 200 we're over the image
-    mouseX < 1000 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
-    mouseY > 500 && //same idea but on the vertical axis.
-    mouseY < 1000
+    mouseX > 700 && //if the mouse is greather than 200 we're over the image
+    mouseX < 1500 && //if the mouse is less than 300 were over the image (since the image is at 200 and is 100 wide = 300)
+    mouseY > 20 && //same idea but on the vertical axis.
+    mouseY < 1500
   ) {
     img5WasClicked = true;
   }
 
   clickCount++;
 
-  if (clickCount >= 4) {
+  if (clickCount >= 1) {
     window.location.href = "firstwin.html";
   }
 
   score += 250;
-  storeItem("gameScore", score);
-}
+sessionStorage.setItem("gameScore", score);}

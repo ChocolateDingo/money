@@ -3,10 +3,14 @@ let Score = 0;
 function preload() {}
 
 function setup() {
-let savedScore = getItem('gameScore');
+let savedScore = sessionStorage.getItem("gameScore");
+
   if (savedScore !== null) {
-    score = savedScore;
+    score = Number(savedScore);
+  } else {
+    score = 0;
   }
+  
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont("Jersey10.ttf");
 
@@ -50,16 +54,28 @@ function draw() {
   fill(255);
   text("BACK", windowWidth / 2, windowHeight / 1.4);
 
-  textSize(300);
-  textFont(myFont);
-  textAlign(CENTER);
-  fill("#4CAF50");
-  text("$" + score, windowWidth / 2, windowHeight / 1.65);
-
+    textSize(100);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill('#FFEB3B');
+  text('1P', windowWidth/20, windowHeight/11);
+  
+   textSize(120);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill(255);
+  text('', windowWidth/2, windowHeight/1.40);
+  
+   textSize(300);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill('#4CAF50');
+  text('$' + score, windowWidth/2, windowHeight/1.65);
+  
   textSize(100);
-  textFont(myFont);
-  textAlign(CENTER);
-  fill("#FFEB3B");
-  fill("#4CAF50");
-  text("$000", windowWidth / 1.07, windowHeight / 11);
+  textFont (myFont);
+  textAlign (CENTER);
+  fill('#FFEB3B');
+  fill('#4CAF50');
+  text('$' + score, windowWidth/1.07,windowHeight/11); 
 }

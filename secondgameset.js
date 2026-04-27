@@ -9,10 +9,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont('Jersey10.ttf'); 
 
-let savedScore = getItem('gameScore');
+let savedScore = sessionStorage.getItem("gameScore");
 
   if (savedScore !== null) {
-    score = savedScore;
+    score = Number(savedScore);
+  } else {
+    score = 0;
   }
 
   img = loadImage('game2setup.png');

@@ -1,6 +1,6 @@
 let Thief1;
 let taxis = [];
-let totalTaxis = 15;
+let totalTaxis = 100;
 let hitSnd;
 let goalSnd;
 let TaxiImg;
@@ -10,16 +10,18 @@ let score = 0;
 function preload() {}
 
 function setup() {
-  let savedScore = getItem("gameScore");
+  let savedScore = sessionStorage.getItem("gameScore");
 
   if (savedScore !== null) {
-    score = savedScore;
+    score = Number(savedScore);
+  } else {
+    score = 0;
   }
 
   createCanvas(windowWidth, windowHeight);
   myFont = loadFont("Jersey10.ttf");
 
-  img = loadImage("game2.png");
+  img = loadImage("game222.png");
   img2 = loadImage("thief.png");
   img3 = loadImage("taxi.png");
 
@@ -54,9 +56,9 @@ function draw() {
 
   Thief1.display();
   Thief1.checkOnscreen();
-  if (Thief1.y <= 0){
-  window.location.href = "secondwin.html";
-}
+  if (Thief1.y <= 0) {
+    window.location.href = "secondwin.html";
+  }
 }
 
 class Taxi {
@@ -74,12 +76,16 @@ class Taxi {
       height * 0.85,
       height * 1.0,
       height * 1.15,
+      height * 1.3,
+      height * 1.45,
+      height * 1.6,
+      height * 1.75,
     ];
 
     this.y = random(lanes);
 
     //this.speed = random(2, 5);
-    this.speed = 3;
+    this.speed = 5;
   }
 
   display() {
@@ -96,9 +102,7 @@ class Taxi {
 
   checkCollision() {
     if (dist(this.x, this.y, Thief1.x, Thief1.y) < 80) {
-      print("collision!");
-      Thief1.x = width / 2.3;
-      Thief1.y = height / 0.5;
+      window.location.href = "secondloss.html";
     }
   }
 }
@@ -137,4 +141,8 @@ function keyPressed() {
   if (keyCode === DOWN_ARROW) {
     Thief1.y += 75;
   }
+
+  score += 250;
+sessionStorage.setItem("gameScore", score);
+
 }
